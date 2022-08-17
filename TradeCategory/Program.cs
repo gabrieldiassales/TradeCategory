@@ -32,7 +32,7 @@ namespace TradeCategory
             Console.Write("Input number of trades in the portfolio:");
             numTrades = Int32.Parse(Console.ReadLine());
             Console.WriteLine($"Input the {numTrades} trade(s) in the portfolio (data for each trade separated by space):");
-            Console.WriteLine("[Trade Amount] [Client’s Sector] [Date of next Pending Payment]:");
+            Console.WriteLine("[Trade Amount] [Client’s Sector] [Date of next Pending Payment] [isPoliticallyExposed]:");
 
             for (int i = 0; i < numTrades; i++)
             {

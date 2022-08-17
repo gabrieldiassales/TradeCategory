@@ -11,5 +11,6 @@ namespace TradeCategory.Models
         public const string Expired = "EXPIRED";
         public const string HighRisk = "HIGHRISK";
         public const string MediumRisk = "MEDIUMRISK";
+        public const string Pep = "PEP";
     }
 }

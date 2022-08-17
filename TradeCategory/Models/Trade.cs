@@ -12,17 +12,23 @@ namespace TradeCategory.Models
         public string ClientSector { get; }
         public DateTime NextPaymentDate { get; }
         public string Category { get; set; }
+        public bool IsPoliticallyExposed { get; set; }
 
-        public Trade(double value, string clientSector, DateTime nextPaymentDate)
+        public Trade(double value, string clientSector, DateTime nextPaymentDate, bool isPoliticallyExposed)
         {
             Value = value;
             ClientSector = clientSector;
             NextPaymentDate = nextPaymentDate;
+            IsPoliticallyExposed = isPoliticallyExposed;
         }
 
         public void CategorizeTrade(DateTime refDate)
         {
             //TODO: There is currently no specific category for trades worth up to 1,000,000.00. This category should be created in the future.
+
+            if (this.IsPoliticallyExposed == true)
+                this.Category = Categories.Pep;
+            else
             if (this.NextPaymentDate < refDate.AddDays(-30))
                 this.Category = Categories.Expired;
             else
